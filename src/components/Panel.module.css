@@ -1,0 +1,424 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section + .section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.heading {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.muted {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.better {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.button {
+  padding: 7px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 600;
+}
+
+.button {
+  color: var(--ink);
+}
+
+.button:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.button:disabled:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+/* Country search */
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.search label {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.search input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--raised);
+}
+
+.search input:hover {
+  border-color: var(--ink-2);
+}
+
+/* Per-passport lines: swatch, passport, entry */
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  column-gap: 8px;
+  align-items: baseline;
+}
+
+.dot,
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--fill, #1b2530);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+  align-self: center;
+}
+
+.hatched {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 2px, rgb(170 190 215 / 0.55) 2px 3px),
+    #232e3b;
+}
+
+/* The home country is outlined on the globe, so it is outlined here. */
+.homeSwatch {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px rgb(235 242 250 / 0.9);
+}
+
+/* Recommendation */
+.verdict {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 11px 14px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  border-left: 4px solid var(--who, var(--either));
+  background: var(--raised);
+}
+
+.verdictHead {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Legend */
+.legend {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legendRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.ramp {
+  display: flex;
+  gap: 2px;
+}
+
+.ramp .swatch {
+  width: 12px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}
+
+/* Wins per passport: a bar split in three, the same hues as the globe */
+.split {
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--raised);
+}
+
+.split span {
+  min-width: 0;
+}
+
+.tally {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tallyRow {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  column-gap: 10px;
+  align-items: baseline;
+}
+
+.tallyDot {
+  align-self: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--who);
+}
+
+.tallyNum {
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Visited panel */
+.big {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--raised);
+  font-size: 13px;
+}
+
+.chip button:not(.chipName) {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.chip button:not(.chipName):hover {
+  background: var(--line);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status {
+  font-size: 13px;
+}
+
+/* Colour key: a dot and a name, in a row */
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.keys li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Next / Visited / Not going */
+.states {
+  display: inline-flex;
+  align-self: flex-start;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--raised);
+}
+
+.states button {
+  height: 34px;
+  padding: 0 13px;
+  border: 0;
+  background: transparent;
+  font-weight: 500;
+}
+
+.states button + button {
+  border-left: 1px solid var(--line-2);
+}
+
+.states button:hover {
+  background: #1b2634;
+}
+
+.states button[aria-pressed='true'][data-state='next'] {
+  background: #ffd166;
+  color: #1b1405;
+  font-weight: 650;
+}
+
+.states button[aria-pressed='true'][data-state='visited'] {
+  background: #dbe7f5;
+  color: #0a1018;
+  font-weight: 650;
+}
+
+.states button[aria-pressed='true'][data-state='skip'] {
+  background: #5a3c4d;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+/* "Next" list: name, how to get in, remove */
+.tripList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tripRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tripRow:last-child {
+  border-bottom: 0;
+}
+
+.tripName {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tripName .muted {
+  font-size: 12.5px;
+}
+
+.x {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.x:hover {
+  background: var(--raised);
+  color: var(--ink);
+}
+
+.chip[data-state='visited'] {
+  border-color: #dbe7f5;
+}
+
+.chip[data-state='skip'] {
+  border-color: #5a3c4d;
+  color: var(--ink-2);
+}
+
+.chipName {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+}
