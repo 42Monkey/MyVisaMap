@@ -39,15 +39,15 @@ It is a personal tool and a portfolio project. It is small enough to read in an 
 - Shareable links such as `?p=TH,DE,JP`
 - Dark mode only, no account, no backend: everything is saved in your browser
 
-## Run it
-
-You need [Node.js](https://nodejs.org) (the LTS version). Then, in a terminal inside the project folder:
+## Run
 
 ```bash
+# install dependencies
 npm install
+
+# run the program
 npm run dev
+
+# open in browser
+http://localhost:5173
 ```
-
-Open the address it prints, usually http://localhost:5173. Stop it with `Ctrl + C`.
-
-To build the finished static site into `dist/`, run `npm run build`. To run the tests, run `npm test`.
