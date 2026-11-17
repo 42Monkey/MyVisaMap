@@ -51,5 +51,3 @@ npm run dev
 Open the address it prints, usually http://localhost:5173. Stop it with `Ctrl + C`.
 
 To build the finished static site into `dist/`, run `npm run build`. To run the tests, run `npm test`.
-
-I sent `docs/screenshot.png`, the image the README links to.
