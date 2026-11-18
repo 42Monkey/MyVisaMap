@@ -33,3 +33,27 @@ export function sanitizeCodes(value: unknown, valid: ReadonlySet<string>): strin
   }
   return [...seen];
 }
+
+/** Serializes the visited country codes for export. */
+export function exportVisited(visited: readonly string[]): string {
+  return JSON.stringify(visited, null, 2);
+}
+
+/** Parses and validates an imported JSON string containing country codes. */
+export function parseVisitedImport(
+  jsonText: string,
+  valid: ReadonlySet<string>
+): { ok: true; codes: string[]; ignored: number } | { ok: false; error: string } {
+  try {
+    const data = JSON.parse(jsonText);
+    if (!Array.isArray(data)) {
+      return { ok: false, error: 'Invalid format: expected a JSON array.' };
+    }
+
+    const codes = sanitizeCodes(data, valid);
+    const ignored = data.length - codes.length;
+    return { ok: true, codes, ignored };
+  } catch {
+    return { ok: false, error: 'Invalid JSON file.' };
+  }
+}
